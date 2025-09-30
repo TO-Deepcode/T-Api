@@ -14,10 +14,5 @@
     { "src": "/api/analyze_news", "dest": "/api/analyze_news.py" },
     { "src": "/api/store_list", "dest": "/api/store_list.py" },
     { "src": "/api/admin_cleanup", "dest": "/api/admin_cleanup.py" }
-  ],
-  "crons": [
-    {
-      "path": "/api/admin_cleanup",
-      "schedule": "0 4 * * 1"
-    }
   ]
+}
