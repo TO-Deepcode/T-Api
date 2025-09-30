@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/*.py",
-      "use": "@vercel/python@3.1.0"
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.11",
+      "memory": 1024,
+      "maxDuration": 60
     }
-  ],
+  },
   "routes": [
     { "src": "/api/health", "dest": "/api/health.py" },
     { "src": "/api/market_fetch", "dest": "/api/market_fetch.py" },
@@ -20,4 +21,3 @@
       "schedule": "0 4 * * 1"
     }
   ]
-}
