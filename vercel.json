@@ -1,0 +1,23 @@
+{
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.11",
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  },
+  "routes": [
+    { "src": "/api/health", "dest": "/api/health.py" },
+    { "src": "/api/market_fetch", "dest": "/api/market_fetch.py" },
+    { "src": "/api/news_fetch", "dest": "/api/news_fetch.py" },
+    { "src": "/api/analyze_news", "dest": "/api/analyze_news.py" },
+    { "src": "/api/store_list", "dest": "/api/store_list.py" },
+    { "src": "/api/admin_cleanup", "dest": "/api/admin_cleanup.py" }
+  ],
+  "crons": [
+    {
+      "path": "/api/admin_cleanup",
+      "schedule": "0 4 * * 1"
+    }
+  ]
+}
